@@ -1,156 +1,150 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Toko Online - Produk Kami</title>
-  <meta name="description" content="Toko online sederhana. Hubungi lewat WhatsApp untuk order." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MPI ART - Menjual gambar anime, kartun, dan mockup kaos digital" />
+  <title>MPI ART | Toko Desain Anime & Mockup Kaos</title>
+
   <style>
-    :root{
-      --accent:#0b74de;
-      --muted:#6b7280;
-      --card:#ffffff;
-      --bg:#f3f4f6;
-      --radius:12px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background-color: #f9fafb; color: #111827; }
+
+    header {
+      background: linear-gradient(135deg, #1E40AF, #2563EB);
+      color: white; text-align: center; padding: 60px 20px;
     }
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:#111;}
-    .container{max-width:980px;margin:28px auto;padding:20px;}
-    header{display:flex;align-items:center;gap:16px;margin-bottom:18px}
-    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#0366a6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
-    h1{font-size:20px;margin:0}
-    p.subtitle{margin:0;color:var(--muted);font-size:14px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px}
-    .card{background:var(--card);border-radius:var(--radius);padding:14px;box-shadow:0 6px 18px rgba(13,17,23,0.06);display:flex;flex-direction:column;gap:10px}
-    .thumb{width:100%;height:160px;border-radius:10px;object-fit:cover;background:#eee}
-    .title{font-weight:600;font-size:16px;margin:0}
-    .desc{color:var(--muted);font-size:13px;margin:0}
-    .price{font-weight:700;color:var(--accent);font-size:16px}
-    .actions{margin-top:auto;display:flex;gap:8px}
-    .btn{flex:1;padding:10px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
-    .btn-order{background:linear-gradient(90deg,var(--accent),#0366a6);color:#fff}
-    .btn-detail{background:#eef2ff;color:#0b1b3a}
-    footer{margin-top:20px;padding:16px;border-radius:12px;background:#fff;box-shadow:0 6px 18px rgba(13,17,23,0.04)}
-    .info-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-    .chip{background:#f1f5f9;padding:8px 10px;border-radius:999px;font-size:13px;color:#0f172a}
-    .pay{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
-    .bank{background:#f8fafc;padding:10px;border-radius:10px;font-size:14px}
-    @media (max-width:480px){ .thumb{height:140px} header{gap:10px} h1{font-size:18px} }
+    header h1 { font-size: 2.8rem; margin-bottom: 10px; }
+    header p { font-size: 1.1rem; }
+
+    nav {
+      background: #111827; display: flex; justify-content: center; gap: 20px; padding: 15px;
+    }
+    nav a {
+      color: white; text-decoration: none; font-weight: 600; transition: 0.3s;
+    }
+    nav a:hover { color: #FBBF24; }
+
+    .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
+
+    .section-title { text-align: center; margin-bottom: 40px; font-size: 1.8rem; color: #1E3A8A; }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card img {
+      width: 100%; height: 200px; object-fit: cover;
+    }
+    .card-body {
+      padding: 15px;
+    }
+    .card-body h3 { font-size: 1.1rem; margin-bottom: 8px; color: #111827; }
+    .card-body p { font-size: 0.9rem; margin-bottom: 10px; color: #4B5563; }
+    .btn {
+      display: inline-block;
+      background: #1E40AF;
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    .btn:hover { background: #FBBF24; color: #111827; }
+
+    footer {
+      background: #111827; color: white; text-align: center; padding: 25px; margin-top: 60px;
+    }
+    footer p { font-size: 0.9rem; }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <header>
-      <div class="logo">TK</div>
-      <div>
-        <h1>Toko Laser & CNC</h1>
-        <p class="subtitle">Produk berkualitas. Order via WhatsApp — pengiriman ke seluruh Indonesia.</p>
-      </div>
-    </header>
+  <header>
+    <h1>🎨 MPI ART</h1>
+    <p>Menjual Desain Anime, Cartoon, dan Mockup Kaos Digital</p>
+  </header>
 
-    <section id="products" class="grid" aria-live="polite">
-      <!-- Produk akan dirender di sini -->
-    </section>
+  <nav>
+    <a href="#produk">Katalog</a>
+    <a href="#caraorder">Cara Order</a>
+    <a href="#tentang">Tentang Kami</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
 
-    <footer>
-      <div class="info-row">
-        <div class="chip">Respon cepat via WhatsApp</div>
-        <div class="chip">Pembayaran: Transfer Bank / QRIS / COD (jika tersedia)</div>
-        <div class="chip">Pengiriman: JNE / J&T / SiCepat</div>
-      </div>
+  <section class="container" id="produk">
+    <h2 class="section-title">🛍️ Koleksi Desain Terbaru</h2>
+    <div class="products">
 
-      <div style="margin-top:10px">
-        <strong>Rekening Bank (contoh):</strong>
-        <div class="pay">
-          <div class="bank">BCA • 123-456-7890 • PT Contoh</div>
-          <div class="bank">BRI • 987-654-3210 • PT Contoh</div>
+      <div class="card">
+        <img src="https://i.imgur.com/tdb5hBI.jpeg" alt="Anime Mockup 1">
+        <div class="card-body">
+          <h3>Anime Street Mockup</h3>
+          <p>Mockup kaos bergaya street dengan karakter anime keren.</p>
+          <a class="btn" href="https://wa.me/6285XXXXXXX?text=Halo%20saya%20ingin%20pesan%20Anime%20Street%20Mockup">Order via WA</a>
         </div>
       </div>
 
-      <p style="margin-top:12px;color:var(--muted);font-size:13px">Tips: Pasang foto produk yang jelas, sertakan berat & estimasi ongkir, dan update stok.</p>
-    </footer>
-  </div>
-
-  <script>
-    // --- DATA PRODUK: edit di sini ---
-    const products = [
-      {
-        id: 'p1',
-        name: 'Papan Akrilik Laser Cut 30x30 cm',
-        desc: 'Akrilik 3mm, potongan presisi untuk dekor & signage.',
-        price: 45000,
-        img: 'https://images.unsplash.com/photo-1581094271877-2b2f66a1fd1b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3c0f0b3b9f0d455b6d1fbbf5b3d1a4f0'
-      },
-      {
-        id: 'p2',
-        name: 'Jasa Potong Laser Plat Besi 1mm',
-        desc: 'Presisi tinggi, sesuai layout file .dxf / .svg.',
-        price: 25000,
-        img: 'https://images.unsplash.com/photo-1616627566435-0f7b1d4d9c6c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0a2a5b4e974b6e2a2d23a7b3d8b6f8c9'
-      },
-      {
-        id: 'p3',
-        name: 'Bracket CNC Aluminium',
-        desc: 'CNC milling, toleransi ketat, finishing halus.',
-        price: 90000,
-        img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=a5a27cfd3b4c4f9a9a0f2f1c2ea2d4a8'
-      }
-    ];
-
-    // nomor WhatsApp pemilik toko (format internasional tanpa +, contoh: 6281234567890)
-    const waNumber = '6285163164958';
-
-    function formatRupiah(n){
-      return 'Rp ' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-    }
-
-    function createProductCard(p){
-      const div = document.createElement('div');
-      div.className = 'card';
-      div.innerHTML = `
-        <img class="thumb" src="${p.img}" alt="${p.name}" loading="lazy" />
-        <div>
-          <p class="title">${p.name}</p>
-          <p class="desc">${p.desc}</p>
+      <div class="card">
+        <img src="https://i.imgur.com/v0hTTVc.jpeg" alt="Cartoon Mockup">
+        <div class="card-body">
+          <h3>Cartoon Tee Mockup</h3>
+          <p>Desain kaos bergaya cartoon lucu dan unik.</p>
+          <a class="btn" href="https://wa.me/6285XXXXXXX?text=Halo%20saya%20ingin%20pesan%20Cartoon%20Tee%20Mockup">Order via WA</a>
         </div>
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
-          <div class="price">${formatRupiah(p.price)}</div>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/BtSbw2F.jpeg" alt="Vector Pack">
+        <div class="card-body">
+          <h3>Vector Design Pack</h3>
+          <p>Paket desain vektor eksklusif untuk sablon dan merchandise.</p>
+          <a class="btn" href="https://wa.me/6285XXXXXXX?text=Halo%20saya%20ingin%20pesan%20Vector%20Design%20Pack">Order via WA</a>
         </div>
-        <div class="actions">
-          <button class="btn btn-order" data-id="${p.id}">Order via WhatsApp</button>
-          <button class="btn btn-detail" data-id="${p.id}">Detail</button>
-        </div>
-      `;
-      return div;
-    }
+      </div>
 
-    function init(){
-      const wrap = document.getElementById('products');
-      products.forEach(p => {
-        const card = createProductCard(p);
-        wrap.appendChild(card);
-      });
+    </div>
+  </section>
 
-      // event delegation
-      wrap.addEventListener('click', (e) => {
-        const orderBtn = e.target.closest('.btn-order');
-        const detBtn = e.target.closest('.btn-detail');
-        if(orderBtn){
-          const id = orderBtn.getAttribute('data-id');
-          const prod = products.find(x => x.id === id);
-          const text = `Halo, saya mau order:%0A- Produk: ${encodeURIComponent(prod.name)}%0A- Harga: ${encodeURIComponent(formatRupiah(prod.price))}%0A- Jumlah: 1%0A- Alamat pengiriman: `;
-          const url = `https://wa.me/${waNumber}?text=${text}`;
-          window.open(url,'_blank');
-        } else if(detBtn){
-          const id = detBtn.getAttribute('data-id');
-          const prod = products.find(x => x.id === id);
-          alert(`${prod.name}\n\n${prod.desc}\n\nHarga: ${formatRupiah(prod.price)}`);
-        }
-      });
-    }
+  <section class="container" id="caraorder">
+    <h2 class="section-title">💬 Cara Order</h2>
+    <p>
+      1️⃣ Pilih desain yang kamu suka.<br>
+      2️⃣ Klik tombol “Order via WA”.<br>
+      3️⃣ Admin kami akan kirim detail pembayaran.<br>
+      4️⃣ File dikirim via email/drive setelah pembayaran selesai.<br><br>
+      Pembayaran via BCA / BRI / DANA / QRIS.
+    </p>
+  </section>
 
-    document.addEventListener('DOMContentLoaded', init);
-  </script>
+  <section class="container" id="tentang">
+    <h2 class="section-title">👕 Tentang MPI ART</h2>
+    <p>
+      MPI ART adalah studio desain digital yang fokus menyediakan gambar anime, kartun, dan template mockup kaos berkualitas tinggi.
+      Kami membantu para kreator dan pelaku sablon untuk mendapatkan desain terbaik tanpa ribet.
+    </p>
+  </section>
+
+  <section class="container" id="kontak">
+    <h2 class="section-title">📞 Kontak Kami</h2>
+    <p>
+      WhatsApp: <a href="https://wa.me/6285XXXXXXX" target="_blank">+62 85X XXX XXXX</a><br>
+      Instagram: <a href="https://instagram.com/mpiart.store" target="_blank">@mpiart.store</a><br>
+      Email: mpiart.store@gmail.com
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 MPI ART - Semua hak cipta dilindungi.</p>
+  </footer>
 </body>
 </html>
